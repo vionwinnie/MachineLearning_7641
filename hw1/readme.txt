@@ -28,5 +28,5 @@ local topography. The output is type of trees and it is divided into 7 classes,
 Code 
 
 - utils.py : contains functions to preprocess datasets and drawing learning curve
-- WineQuality_AllCodeCollection.ipynb: Jupyter notebook that explores the 5 algorithms on Wine Quality Dataset
-- ForestCover_AllCodeCollection.ipynb: Jupyter notebook that explores the 5 algorithms on Forest Cover Type Dataset
+- WineQuality_AllCodeCollection.ipynb: Jupyter notebook that explores the 5 algorithms on Wine Quality Dataset, with dependecies on utils.py
+- ForestCover_AllCodeCollection.ipynb: Jupyter notebook that explores the 5 algorithms on Forest Cover Type Dataset, with dependecies on utils.py
