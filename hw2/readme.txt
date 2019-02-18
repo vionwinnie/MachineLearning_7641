@@ -3,3 +3,5 @@ Please add anything you find useful for coding up hw2 using scikit-learn or Pyth
 
 https://github.com/skylergrammer/SimulatedAnnealing -- scikit learn simulated annealing
 https://github.com/rsteca/sklearn-deap -- scikit learn genetic algorithm
+
+
