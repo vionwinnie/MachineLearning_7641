@@ -47,13 +47,13 @@ Commandline parameter(s):
 # Random number generator */
 random = Random()
 # The number of items
-NUM_ITEMS = 40
+NUM_ITEMS = 50
 # The number of copies each
-COPIES_EACH = 4
+COPIES_EACH = 3
 # The maximum weight for a single element
-MAX_WEIGHT = 50
+MAX_WEIGHT = 30
 # The maximum volume for a single element
-MAX_VOLUME = 50
+MAX_VOLUME = 40
 # The volume of the knapsack
 KNAPSACK_VOLUME = MAX_VOLUME * NUM_ITEMS * COPIES_EACH * .4
 
@@ -75,7 +75,7 @@ ranges = array('i', fill)
 
 numTrials = 1
 maxIters = 5000
-outfile = './../logs/KS_@ALG@_@N@_LOG.csv'
+outfile = './../logs/KS/KS_@ALG@_@N@_LOG.csv'
 ef = KnapsackEvaluationFunction(weights, volumes, KNAPSACK_VOLUME, copies)
 odd = DiscreteUniformDistribution(ranges)
 nf = DiscreteChangeOneNeighbor(ranges)
