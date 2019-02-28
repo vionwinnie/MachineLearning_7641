@@ -30,14 +30,29 @@ https://www.cc.gatech.edu/~isbell/papers/isbell-mimic-nips-1997.pdf
 
 
 ---------------------------------------------------
-Winnie's Approach to Installing Dependencies on ubuntu
-1) Install Java
+Winnie's Approach to Installing Dependencies on Windows
+1) Install Java SDK
+https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html
 2) Install Apache Ant
-3) Install Jypthon 
-- https://www.jython.org/archive/22/installation.html
-- Command line to install Jython: 
-  sudo java -jar jython_installer-2.2.1.jar
-  - this is the home path for the jython interpreter: ~/jython2.2.1/jython   [~/jython2.5.2/bin/jython for stack overflow example]
-  - set PATH as this  home path: PATH=$HOME/jython2.5.2/:$PATH [ PATH=$HOME/jython2.5.2/bin:$PATH for stack overflow example]
- 4) Git clone Abigail
+https://ant.apache.org/bindownload.cgi
+
+- locate folders path of Java and Ant Apache 
+- Add JAVA_HOME and ANT_HOME and append to PATH in environment variables
+(Follow this instruction: https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/)
+
+3) Install Jython
+https://www.jython.org/archive/22/installation.html
+- locate folder path of Jython
+- Add JYTHON_HOME and append to PATH
+(Follow hygull's screenshot in stack overflow: https://stackoverflow.com/questions/8148780/how-do-i-set-the-environment-variables-for-jython)
+- Test in any terminal to see if jython can be called upon
+
+4) Git clone Abigail
+- Open terminal window to the cloned folder where build.xml is located
+- Run ant to compile the .jar file
+
+5) Git clone this repository
+- Copy the entire Abigail folder into src
+- Each file can be run calling "jython ANN_xxxxxxx.py"
+
  
