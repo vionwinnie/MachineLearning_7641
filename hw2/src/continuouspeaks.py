@@ -43,13 +43,13 @@ Commandline parameter(s):
    none
 """
 
-N=100
-T=49
-maxIters = 5000
-numTrials=1
+N=200
+T=37
+maxIters = 20000
+numTrials=2
 fill = [2] * N
 ranges = array('i', fill)
-outfile = './../logs/CONTPEAKS_@ALG@_@N@_LOG.csv'
+outfile = './../logs/CONTPEAKS/CONTPEAKS_@ALG@_@N@_LOG.csv'
 ef = ContinuousPeaksEvaluationFunction(T)
 odd = DiscreteUniformDistribution(ranges)
 nf = DiscreteChangeOneNeighbor(ranges)
@@ -60,6 +60,7 @@ hcp = GenericHillClimbingProblem(ef, odd, nf)
 gap = GenericGeneticAlgorithmProblem(ef, odd, mf, cf)
 pop = GenericProbabilisticOptimizationProblem(ef, odd, df)
 
+'''
 # RHC
 for t in range(numTrials):
     fname = outfile.replace('@ALG@','RHC').replace('@N@',str(t+1))
@@ -80,9 +81,6 @@ for t in range(numTrials):
         print st
         with open(fname,'a') as f:
             f.write(st)
-
-
-
 # SA
 for t in range(numTrials):
     for CE in [0.15,0.35,0.55,0.75,0.95]:
@@ -126,7 +124,7 @@ for t in range(numTrials):
             print st
             with open(fname,'a') as f:
                 f.write(st)
-
+'''
 #MIMIC
 for t in range(numTrials):
     for samples,keep,m in product([100],[50],[0.1,0.3,0.5,0.7,0.9]):

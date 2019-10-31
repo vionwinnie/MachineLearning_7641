@@ -52,7 +52,7 @@ Commandline parameter(s):
 """
 
 # set N value.  This is the number of points
-N = 100
+N = 80
 random = Random()
 maxIters = 20000
 numTrials= 1
@@ -62,7 +62,7 @@ points = [[0 for x in xrange(2)] for x in xrange(N)]
 for i in range(0, len(points)):
     points[i][0] = random.nextDouble()
     points[i][1] = random.nextDouble()
-outfile = './../logs/TSP_@ALG@_@N@_LOG.csv'
+outfile = './../logs/TSP/TSP_@ALG@_@N@_LOG.csv'
 ef = TravelingSalesmanRouteEvaluationFunction(points)
 odd = DiscretePermutationDistribution(N)
 nf = SwapNeighbor()
@@ -71,6 +71,7 @@ cf = TravelingSalesmanCrossOver(ef)
 hcp = GenericHillClimbingProblem(ef, odd, nf)
 gap = GenericGeneticAlgorithmProblem(ef, odd, mf, cf)
 
+'''
 #GA
 for t in range(numTrials):
     for pop,mate,mutate in product([100],[50,30,10],[30,10]):
@@ -141,7 +142,7 @@ for t in range(numTrials):
             print st
             with open(fname,'a') as f:
                 f.write(st)
-
+'''
 # SA
 for t in range(numTrials):
     for CE in [0.15,0.35,0.55,0.75,0.95]:
@@ -163,7 +164,7 @@ for t in range(numTrials):
             print st
             with open(fname,'a') as f:
                 f.write(st)
-
+'''
 #GA
 for t in range(numTrials):
     for pop,mate,mutate in product([100],[50,30,10],[30,10]):
@@ -188,3 +189,4 @@ for t in range(numTrials):
 
 
 
+'''

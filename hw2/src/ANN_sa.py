@@ -17,25 +17,25 @@ import opt.ga.StandardGeneticAlgorithm as StandardGeneticAlgorithm
 from func.nn.activation import LogisticSigmoid
 
 # Network parameters found "optimal" in Assignment 1
-INPUT_LAYER = 48
+INPUT_LAYER = 12
 HIDDEN_LAYER1 = 5
 HIDDEN_LAYER2 = 5
 HIDDEN_LAYER3 = 5
 OUTPUT_LAYER = 1
 TRAINING_ITERATIONS = 100000
-OUTFILE = './../logs/XXX_LOG.csv'
+OUTFILE = './../logs/ANNs/SA_LOG.csv'
 
 def main(T, CE):
     """Run this experiment"""
-    training_ints = initialize_instances('./../data/bank_train.csv')
-    testing_ints = initialize_instances('./../data/bank_test.csv')
+    training_ints = initialize_instances('./../data/wine_train.csv')
+    testing_ints = initialize_instances('./../data/wine_test.csv')
     factory = BackPropagationNetworkFactory()
     measure = SumOfSquaresError()
     data_set = DataSet(training_ints)
     acti = LogisticSigmoid()
     rule = RPROPUpdateRule()
     oa_name = "SA_{}_{}".format(T, CE)
-    with open(OUTFILE.replace('XXX',oa_name),'w') as f:
+    with open(OUTFILE,'w') as f:
         f.write('{},{},{},{},{},{}\n'.format('iteration','MSE_trg','MSE_tst','acc_trg','acc_tst','elapsed'))
     classification_network = factory.createClassificationNetwork([INPUT_LAYER, HIDDEN_LAYER1, OUTPUT_LAYER],acti)
     nnop = NeuralNetworkOptimizationProblem(data_set, classification_network, measure)
